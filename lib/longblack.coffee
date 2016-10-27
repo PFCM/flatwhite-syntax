@@ -10,18 +10,18 @@ class Longblack
 
     @disposables = new CompositeDisposable
     @packageName = require('../package.json').name
-    @disposables.add atom.config.observe "#{@packageName}.ebmedded", => @enableConfigTheme()
+    @disposables.add atom.config.observe "#{@packageName}.embedded", => @enableConfigTheme()
 
   deactivate: ->
     @disposables.dispose()
 
   enableConfigTheme: ->
-    ebmedded = atom.config.get "#{@packageName}.ebmedded"
+    ebmedded = atom.config.get "#{@packageName}.embedded"
     @enableTheme ebmedded
 
-  enableTheme: (ebmedded) ->
+  enableTheme: (embedded) ->
     embedded_path = "#{__dirname}/../styles/settings.less"
-    fs.writeFileSync embedded_path, "@import 'languages/embedded-#{@getNormalizedName(ebmedded)}';"
+    fs.writeFileSync embedded_path, "@import 'languages/embedded-#{@getNormalizedName(embedded)}';"
     atom.packages.getLoadedPackage("#{@packageName}").reloadStylesheets()
 
   getNormalizedName: (name) ->
