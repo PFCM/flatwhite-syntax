@@ -1,5 +1,10 @@
 #include<stdio.h>
 
+#define abcd 123
+#ifndef abcd
+  #include "somethingelse.h"
+#endif
+
 int main()
 {
     int avg = 0;

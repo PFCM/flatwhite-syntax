@@ -10,4 +10,4 @@ ui theme.
 
 
 #### screenshots:
-![light](./assets/light.png)![dark](./assets/dark.png)
+![light](assets/light.png)![dark](assets/dark.png)
