@@ -2,7 +2,7 @@
   "name": "longblack-syntax",
   "theme": "syntax",
   "main": "./lib/longblack",
-  "version": "0.8.0",
+  "version": "0.0.0",
   "description": "Colored backgrounds used for code highlighting.",
   "keywords": [
     "dark",
