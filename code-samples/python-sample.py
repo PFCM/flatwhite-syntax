@@ -23,8 +23,10 @@ states = {
     'Michigan': 'MI'
 }
 
+
 class FloatingPointError(Exception):
     pass
+
 
 def isNumber(value):
     '''Return True if input is an integer or decimal number.'''
