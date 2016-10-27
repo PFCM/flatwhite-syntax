@@ -10,19 +10,37 @@ class Longblack
 
     @disposables = new CompositeDisposable
     @packageName = require('../package.json').name
-    @disposables.add atom.config.observe "#{@packageName}.embedded", => @enableConfigTheme()
+    @disposables.add atom.config.observe "#{@packageName}.mode", => @enableConfigTheme()
 
   deactivate: ->
     @disposables.dispose()
 
   enableConfigTheme: ->
-    ebmedded = atom.config.get "#{@packageName}.embedded"
-    @enableTheme embedded
+    mode = atom.config.get "#{@packageName}.mode"
+    @enableTheme mode
 
-  enableTheme: (embedded) ->
+  enableTheme: (mode) ->
     embedded_path = "#{__dirname}/../styles/settings.less"
-    fs.writeFileSync embedded_path, "@import 'languages/embedded-#{@getNormalizedName(embedded)}';"
+    old_settings = fs.readFileSync embedded_path
+    settings = ""
+
+    # flip a couple of syntax variables
+    if mode == "dark"
+      settings += "@syntax-text-color: @base6;\n"
+      settings += "@syntax-background-color: @base0;\n"
+    else if mode == "light"
+      settings += "@syntax-text-color: @base0;\n"
+      settings += "@syntax-background-color: @base6;\n"
+
+    fs.writeFileSync embedded_path, settings
+
     atom.packages.getLoadedPackage("#{@packageName}").reloadStylesheets()
+    # also reload the UI package
+    all_packages = atom.packages.getActivePackages()
+    for p in all_packages
+      if p.name.slice(-2) == 'ui'
+        console.log(p)
+        p.reloadStylesheets()
 
   getNormalizedName: (name) ->
     "#{name}"

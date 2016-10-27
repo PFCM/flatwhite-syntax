@@ -1,10 +1,10 @@
 settings =
   config:
-    embedded:
-      title: 'HTML embedded highlighting variant'
-      description: 'Chose between simple (default) and full highlighting  variants'
+    mode:
+      title: 'Light or dark mode'
+      description: 'Choose which mode: light or dark. Sometimes this switch does not work properly -- you may have to restart atom :(.'
       type: 'string'
-      default: 'Simple'
-      enum: ["Simple", "Full"]
+      default: 'dark'
+      enum: ['dark', 'light']
 
 module.exports = settings

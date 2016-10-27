@@ -3,13 +3,13 @@
   "theme": "syntax",
   "main": "./lib/longblack",
   "version": "0.0.0",
-  "description": "Colored backgrounds used for code highlighting.",
+  "description": "Solarized backgrounds used for code highlighting -- fork of flatwhite-syntax.",
   "keywords": [
     "dark",
-    "soft",
     "minimal",
     "syntax",
-    "theme"
+    "theme",
+    "solarized"
   ],
   "repository": "https://github.com/pfcm/longblack-syntax",
   "license": "MIT",
