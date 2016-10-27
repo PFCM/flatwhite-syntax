@@ -10,4 +10,4 @@ ui theme.
 
 
 #### screenshots:
-![light](assets/light.png)![dark](assets/dark.png)
+![light](https://github.com/pfcm/longblack-syntax/raw/master/assets/light.png)![dark](https://github.com/pfcm/longblack-syntax/raw/master/assets/dark.png)
