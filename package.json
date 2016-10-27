@@ -2,7 +2,7 @@
   "name": "longblack-syntax",
   "theme": "syntax",
   "main": "./lib/longblack",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Solarized backgrounds used for code highlighting -- fork of flatwhite-syntax.",
   "keywords": [
     "dark",
