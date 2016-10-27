@@ -1,17 +1,17 @@
 {
-  "name": "flatwhite-syntax",
+  "name": "longblack-syntax",
   "theme": "syntax",
-  "main": "./lib/flatwhite",
+  "main": "./lib/longblack",
   "version": "0.8.0",
   "description": "Colored backgrounds used for code highlighting.",
   "keywords": [
-    "light",
+    "dark",
     "soft",
     "minimal",
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/biletskyy/flatwhite-syntax",
+  "repository": "https://github.com/pfcm/longblack-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

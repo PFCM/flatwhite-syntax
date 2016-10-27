@@ -2,9 +2,9 @@ fs = require 'fs'
 path = require 'path'
 {CompositeDisposable} = require 'atom'
 
-class Flatwhite
+class Longblack
 
-  config: require('./flatwhite-settings').config
+  config: require('./longblack-settings').config
 
   activate: ->
 
@@ -29,4 +29,4 @@ class Flatwhite
       .replace /\ /g, '-'
       .toLowerCase()
 
-module.exports = new Flatwhite
+module.exports = new Longblack
