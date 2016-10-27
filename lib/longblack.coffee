@@ -17,7 +17,7 @@ class Longblack
 
   enableConfigTheme: ->
     ebmedded = atom.config.get "#{@packageName}.embedded"
-    @enableTheme ebmedded
+    @enableTheme embedded
 
   enableTheme: (embedded) ->
     embedded_path = "#{__dirname}/../styles/settings.less"
