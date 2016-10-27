@@ -2,6 +2,12 @@
 
   .storage.type.class,
   .storage.type.function { .purple; }
+  // also logical operators
+  .logical.operator { .purple; }
+  // and builtin functions
+  .builtin { .teal; }
+  // other language stuff (print)
+  .other.keyword { .purple; }
 
   .meta.structure.dictionary.key {
     .numeric,
@@ -14,5 +20,7 @@
   .constant.language { .teal; }
 
   .variable.self { .orange; }
-
+  //.parameters.function { .orange; }
+  .function.name.entity { .orange; }
+  .class.type.name { .orange; }
 }
