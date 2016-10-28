@@ -27,7 +27,7 @@ class Longblack
     # flip a couple of syntax variables
     if mode == "dark"
       settings += "@syntax-text-color: @base6;\n"
-      settings += "@syntax-background-color: @base0;\n"
+      settings += "@syntax-background-color: @base1;\n"
     else if mode == "light"
       settings += "@syntax-text-color: @base0;\n"
       settings += "@syntax-background-color: @base6;\n"
