@@ -5,6 +5,28 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from contextlib import contextmanager
+
+
+@contextmanager
+def pointless_context_manager(filename=__file__):
+    """Does something unnecessary
+
+    Args:
+        filename(Optional[str]): the file to be outrageous with.
+    """
+    with open(filename) as fp:
+        yield fp
+
+
+class Something(object):
+
+    def __init__(self, the_thing):
+        self._the_thing = the_thing
+
+    @property
+    def the_thing(self):
+        return self._the_thing
 
 
 class SimpleTest(TestCase):
@@ -322,9 +344,12 @@ class Feed(models.Model):
     title = models.CharField(max_length=500)
     feed_url = models.URLField(unique=True, max_length=500)
     public_url = models.URLField(max_length=500)
-    approval_status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=PENDING_FEED)
+    approval_status = models.CharField(max_length=1, choices=STATUS_CHOICES,
+                                       default=PENDING_FEED)
     feed_type = models.ForeignKey(FeedType, on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, blank=True, null=True, related_name='owned_feeds', on_delete=models.SET_NULL)
+    owner = models.ForeignKey(User, blank=True, null=True,
+                              related_name='owned_feeds',
+                              on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title
@@ -333,7 +358,8 @@ class Feed(models.Model):
         super(Feed, self).save(**kwargs)
         if settings.SUPERFEEDR_CREDS is not None:
             if self.approval_status == APPROVED_FEED:
-                Subscription.objects.subscribe(self.feed_url, settings.PUSH_HUB)
+                Subscription.objects.subscribe(
+                    self.feed_url, settings.PUSH_HUB)
             elif self.approval_status == DENIED_FEED:
                 self.unsubscribe()
 
