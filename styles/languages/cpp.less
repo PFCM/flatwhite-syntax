@@ -1,0 +1,22 @@
+.source.cpp {
+
+  .storage.type { .orange; }
+  .modifier.storage { .purple; }
+
+  // make preprocessor macros consistent
+  // .include.directive,
+  // .include.lt-gt,
+  // .include.double,
+  // .preprocessor.function,
+  // .define.directive,
+  // .conditional.directive,
+  // { .blue; }
+  .preprocessor.meta > .directive,
+  .preprocessor.meta > .string {
+    .blue;
+    .punctuation {
+      color: @blue-text-sec;
+    }
+  }
+
+}
